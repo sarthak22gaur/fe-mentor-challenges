@@ -1,0 +1,208 @@
+:root {
+  --color-primary-700: hsl(215, 51%, 70%);
+  --color-primary-400: hsl(178, 100%, 50%);
+  --color-neutral-bg: hsl(217, 54%, 11%);
+  --color-neutral-card: hsl(216, 50%, 16%);
+  --color-neutral-line: hsl(215, 32%, 27%);
+  --color-neutral-100: hsl(0, 0%, 100%);
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Fraunces", serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin, padding and enherit font */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  text-decoration: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: var(--ff-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-neutral-100);
+  background-color: black;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-neutral-bg);
+}
+.main-container .contaier {
+  max-width: 400px;
+}
+.main-container .card {
+  background-color: var(--color-neutral-card);
+  border-radius: 10px;
+  padding: 2em;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-container .card .img-container {
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.main-container .card .img-container .card-img {
+  grid-row: 1/1;
+  grid-column: 1/1;
+  border-radius: 10px;
+}
+.main-container .card .img-container .icon-container {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  grid-row: 1/1;
+  grid-column: 1/1;
+}
+.main-container .card .img-container .view-icon {
+  display: none;
+  grid-row: 1/1;
+  grid-column: 1/1;
+}
+.main-container .card .img-container:hover .icon-container {
+  display: block;
+  background-color: var(--color-primary-400);
+  opacity: 0.4;
+  cursor: pointer;
+}
+.main-container .card .img-container:hover .view-icon {
+  display: block;
+  grid-row: 1/1;
+  grid-column: 1/1;
+  z-index: 999;
+}
+.main-container .card .card-body {
+  width: 100%;
+  max-width: 300px;
+}
+.main-container .card .card-body h1.title {
+  color: var(--color-neutral-100);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1em 0;
+}
+.main-container .card .card-body h1.title:hover {
+  color: var(--color-primary-400);
+}
+.main-container .card .card-body p.content {
+  color: var(--color-primary-700);
+  font-size: 1em;
+  font-weight: 300;
+  margin: 1em 0;
+}
+.main-container .card .card-body .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
+}
+.main-container .card .card-body .info .info-items {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.main-container .card .card-body .info .expiration {
+  justify-content: right;
+}
+.main-container .card .card-body .info .coin {
+  color: var(--color-primary-400);
+}
+.main-container .card .card-body .creator {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--color-neutral-line);
+  padding-top: 1em;
+}
+.main-container .card .card-body .creator img {
+  max-width: 35px;
+  max-height: 35px;
+  border-radius: 50%;
+  border: 2px solid var(--color-neutral-100);
+}
+.main-container .card .card-body .creator .creator-name {
+  color: var(--color-primary-700);
+  font-size: 1em;
+  font-weight: 300;
+}
+.main-container .card .card-body .creator .creator-name span {
+  color: var(--color-neutral-100);
+  font-weight: 600;
+}
+.main-container .card .card-body .creator .creator-name span:hover {
+  color: var(--color-primary-400);
+}/*# sourceMappingURL=style.css.map */
